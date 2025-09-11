@@ -4,29 +4,106 @@
     <meta charset="UTF-8">
     <title>AI Presentation Coach</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; background: #f7f9fa; }
-        header { background: #222; color: #fff; padding: 1.5rem 2rem; }
-        main { max-width: 900px; margin: 2rem auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 2rem; }
-        h1 { margin-top: 0; }
-        .features { display: flex; gap: 2rem; flex-wrap: wrap; margin: 2rem 0; }
-        .feature { flex: 1 1 250px; background: #f0f4f8; padding: 1rem; border-radius: 6px; }
-        footer { text-align: center; color: #888; padding: 1rem 0; margin-top: 2rem; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header style="display: flex; align-items: center; justify-content: space-between;">
         <div>
-            <h1 style="margin: 0;">AI Presentation Coach</h1>
-            <p style="margin: 0.5rem 0 0 0;">Empower your presentations with real-time AI feedback and coaching.</p>
+            <h1 style="margin: 0">SpeakSmart</h1>
         </div>
         <nav>
+            <div class="dropdown" style="display:inline-block; position:relative;">
             <a href="login.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Login</a>
-            <a href="practice.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Presentation Practice</a>
+            </div>
+            <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="practice.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Practice</a>
+            <div class="dropdown-content" style="display:none; position:absolute; background:#0078d4; min-width:160px; z-index:1;">
+                <a href="practice_speech.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Speech Practice</a>
+                <a href="practice_pitch.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Pitch Practice</a>
+            </div>
+            </div>
+            <div class="dropdown" style="display:inline-block; position:relative;">
             <a href="tutorials.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Tutorials</a>
+            <div class="dropdown-content" style="display:none; position:absolute; background:#0078d4; min-width:160px; z-index:1;">
+                <a href="tutorials_beginner.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Beginner</a>
+                <a href="tutorials_advanced.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Advanced</a>
+            </div>
+            </div>
+            <div class="dropdown" style="display:inline-block; position:relative;">
             <a href="settings.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Settings</a>
+            <div class="dropdown-content" style="display:none; position:absolute; background:#0078d4; min-width:160px; z-index:1;">
+                <a href="settings_profile.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Profile</a>
+                <a href="settings_preferences.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Preferences</a>
+            </div>
+            </div>
         </nav>
+        <script>
+            // Simple dropdown hover logic
+            document.querySelectorAll('.dropdown').forEach(function(drop) {
+            drop.addEventListener('mouseenter', function() {
+                var content = drop.querySelector('.dropdown-content');
+                if(content) content.style.display = 'block';
+            });
+            drop.addEventListener('mouseleave', function() {
+                var content = drop.querySelector('.dropdown-content');
+                if(content) content.style.display = 'none';
+            });
+            });
+        </script>
     </header>
+    <!-- Carousel Section -->
+    <section class="carousel-container" style="width:100%; max-width:900px; margin:2rem auto;">
+        <div class="carousel" style="position:relative; overflow:hidden; border-radius:8px;">
+            <div class="carousel-slides" style="display:flex; transition:transform 0.5s ease;">
+                <div class="carousel-slide" style="min-width:100%; box-sizing:border-box; background:#e6f0fa; padding:2rem; text-align:center;">
+                    <h2>Welcome to SpeakSmart</h2>
+                    <p>AI-powered coaching for confident presentations.</p>
+                </div>
+                <div class="carousel-slide" style="min-width:100%; box-sizing:border-box; background:#f0e6fa; padding:2rem; text-align:center;">
+                    <h2>Instant Feedback</h2>
+                    <p>Get real-time insights as you practice.</p>
+                </div>
+                <div class="carousel-slide" style="min-width:100%; box-sizing:border-box; background:#e6fae6; padding:2rem; text-align:center;">
+                    <h2>Personalized Tips</h2>
+                    <p>Improve your delivery with tailored advice.</p>
+                </div>
+            </div>
+            <button class="carousel-prev" style="position:absolute; top:50%; left:10px; transform:translateY(-50%); background:#0078d4; color:#fff; border:none; border-radius:50%; width:32px; height:32px; cursor:pointer;">&#10094;</button>
+            <button class="carousel-next" style="position:absolute; top:50%; right:10px; transform:translateY(-50%); background:#0078d4; color:#fff; border:none; border-radius:50%; width:32px; height:32px; cursor:pointer;">&#10095;</button>
+        </div>
+        <div class="carousel-dots" style="text-align:center; margin-top:1rem;">
+            <span class="dot" style="height:12px; width:12px; margin:0 4px; background:#0078d4; border-radius:50%; display:inline-block; cursor:pointer; opacity:0.5;"></span>
+            <span class="dot" style="height:12px; width:12px; margin:0 4px; background:#0078d4; border-radius:50%; display:inline-block; cursor:pointer; opacity:0.5;"></span>
+            <span class="dot" style="height:12px; width:12px; margin:0 4px; background:#0078d4; border-radius:50%; display:inline-block; cursor:pointer; opacity:0.5;"></span>
+        </div>
+        <script>
+            // Simple Carousel Logic
+            const slides = document.querySelector('.carousel-slides');
+            const dots = document.querySelectorAll('.dot');
+            let currentIndex = 0;
+            function showSlide(index) {
+                slides.style.transform = 'translateX(' + (-index * 100) + '%)';
+                dots.forEach((dot, i) => {
+                    dot.style.opacity = i === index ? '1' : '0.5';
+                });
+            }
+            document.querySelector('.carousel-prev').onclick = function() {
+                currentIndex = (currentIndex === 0) ? 2 : currentIndex - 1;
+                showSlide(currentIndex);
+            };
+            document.querySelector('.carousel-next').onclick = function() {
+                currentIndex = (currentIndex === 2) ? 0 : currentIndex + 1;
+                showSlide(currentIndex);
+            };
+            dots.forEach((dot, i) => {
+                dot.onclick = function() {
+                    currentIndex = i;
+                    showSlide(currentIndex);
+                };
+            });
+            showSlide(currentIndex);
+        </script>
+    </section>
     <main>
         <section>
             <h2>About the Project</h2>
