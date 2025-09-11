@@ -43,3 +43,53 @@ footer {
     padding: 1rem 0;
     margin-top: 2rem;
 }
+
+/* Practice page styles */
+.section {
+    margin-bottom: 20px;
+}
+.label {
+    font-size: 15px;
+    margin-bottom: 5px;
+    display: block;
+}
+.mode-btn {
+    padding: 6px 16px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 12px;
+    background: #d9d9d9;
+    color: #222;
+    cursor: pointer;
+    font-size: 15px;
+}
+.mode-btn.active {
+    background: #f3d6e0;
+    border: 2px solid #b88;
+}
+select {
+    width: 100%;
+    padding: 6px;
+    border-radius: 8px;
+    border: none;
+    background: #d9d9d9;
+    font-size: 15px;
+}
+.icon {
+    display: block;
+    margin: 30px auto 20px auto;
+    width: 120px;
+    height: 120px;
+}
+.start-btn {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    padding: 12px 0;
+    background: #b8f6a0;
+    color: #222;
+    border: none;
+    border-radius: 12px;
+    font-size: 20px;
+    cursor: pointer;
+}
