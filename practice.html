@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice | SpeakSmart</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="script" href="script.js" defer>
 </head>
 <body>
-    <header style="display: flex; align-items: center; justify-content: space-between;">
+    <header>
         <div>
             <h1 style="margin: 0;">SpeakSmart</h1>
         </div>
         <nav>
-            <a href="index.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Home</a>
+            <a href="dashboard.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Home</a>
             <a href="practice.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Practice</a>
             <a href="tutorials.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Tutorials</a>
             <a href="settings.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Settings</a>
@@ -22,16 +23,56 @@
         <section style="max-width:400px; margin:2rem auto; background:#eaf0fa; border:10px solid #222; border-radius:8px; padding:2rem;">
             <div class="section">
                 <span class="label">Practice Mode</span>
-                <button class="mode-btn active" id="presentationBtn">Presentation</button>
-                <button class="mode-btn" id="interviewBtn">Interview</button>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const startBtn = document.getElementById('startBtn');
+                        startBtn.addEventListener('click', async function() {
+                            // Start video and audio
+                            try {
+                                const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                                let video = document.getElementById('practiceVideo');
+                                if (!video) {
+                                    video = document.createElement('video');
+                                    video.id = 'practiceVideo';
+                                    video.autoplay = true;
+                                    video.muted = true;
+                                    video.style.width = '100%';
+                                    video.style.marginTop = '1rem';
+                                    startBtn.parentNode.appendChild(video);
+                                }
+                                video.srcObject = stream;
+                            } catch (err) {
+                                alert('Could not access camera/microphone: ' + err.message);
+                            }
+
+                            // Start presentation (placeholder)
+                            let presentation = document.getElementById('presentationArea');
+                            if (!presentation) {
+                                presentation = document.createElement('div');
+                                presentation.id = 'presentationArea';
+                                presentation.textContent = 'Presentation started...';
+                                presentation.style.marginTop = '1rem';
+                                presentation.style.background = '#fffbe6';
+                                presentation.style.padding = '1rem';
+                                presentation.style.borderRadius = '6px';
+                                startBtn.parentNode.appendChild(presentation);
+                            }
+                        });
+                    });
+                </script>
+                <select id="practiceModeSelect">
+                    <option value="presentation">Presentation</option>
+                    <option value="interview">Interview</option>
+                    <option value="debate">Debate</option>
+                </select>
             </div>
             <div class="section">
                 <span class="label">Audience</span>
                 <select id="audienceSelect">
-                    <option>School</option>
-                    <option>Business</option>
-                    <option>Conference</option>
-                    <option>Online</option>
+                    <option value="school">&#127979; School</option>
+                    <option value="business">&#128188; Business</option>
+                    <option value="conference">&#127891; Conference</option>
+                    <option value="online">&#128187; Online</option>
                 </select>
             </div>
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100" stroke="black">
@@ -46,7 +87,7 @@
         </section>
     </main>
     <footer>
-        &copy; 2025 AI Presentation Coach Project
+        &copy; 2025 SpeakSmart.
     </footer>
     <script src="script.js"></script>
 </body>
