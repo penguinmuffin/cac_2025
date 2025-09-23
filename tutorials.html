@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SpeakSmart Tutorials</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="script" href="script.js" defer>
+</head>
+<body>
+    <header>
+        <div>
+            <h1 style="margin: 0">SpeakSmart</h1>
+        </div>
+        <nav>
+            <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="login.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Login</a>
+            </div>
+            <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="practice.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Practice</a>
+            <div class="dropdown-content" style="display:none; position:absolute; background:#0078d4; min-width:160px; z-index:1;">
+                <a href="practice_speech.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Speech Practice</a>
+                <a href="practice_pitch.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Pitch Practice</a>
+            </div>
+            </div>
+            <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="tutorials.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Tutorials</a>
+            <div class="dropdown-content" style="display:none; position:absolute; background:#0078d4; min-width:160px; z-index:1;">
+                <a href="tutorials_beginner.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Beginner</a>
+                <a href="tutorials_advanced.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Advanced</a>
+            </div>
+            </div>
+            <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="settings.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Settings</a>
+            <div class="dropdown-content" style="display:none; position:absolute; background:#0078d4; min-width:160px; z-index:1;">
+                <a href="settings_profile.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Profile</a>
+                <a href="settings_preferences.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Preferences</a>
+            </div>
+        </nav>
+    </header>
+    <!-- Search Bar -->
+    <div style="width:100%; max-width:600px; margin:2rem auto 2rem auto;">
+        <div style="display:flex; align-items:center; background:#d3cfe2; border-radius:20px; padding:0.5rem 1rem; box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+            <button id="filterBtn" style="background:none; border:none; cursor:pointer; margin-right:0.5rem; padding:0;" aria-label="Open filters">
+                <img src="/images/menu_icon.png" alt="Menu" style="width:28px; height:28px; display:block;">
+            </button>
+            <input type="text" placeholder="Search for anything!" style="flex:1; border:none; background:transparent; font-size:1rem; outline:none; padding:0.5rem; color:#444;">
+            <span style="font-size:1.2rem; margin-left:0.5rem; color:#888;">&#128269;</span>
+        </div>
+        <div id="filterPanel" style="display:none; background:#f5f3fa; border-radius:16px; box-shadow:0 2px 8px rgba(0,0,0,0.07); padding:1rem; margin-top:1rem;">
+            <form>
+                <div style="margin-bottom:1rem;">
+                    <label style="font-weight:500;">Type:</label>
+                    <select>
+                        <option value="">Any</option>
+                        <option value="article">Article</option>
+                        <option value="video">Video</option>
+                        <option value="quiz">Quiz</option>
+                    </select>
+                </div>
+                <div style="margin-bottom:1rem;">
+                    <label style="font-weight:500;">Time:</label>
+                    <select>
+                        <option value="">Any</option>
+                        <option value="5">Under 5 min</option>
+                        <option value="15">Under 15 min</option>
+                        <option value="30">Under 30 min</option>
+                        <option value="60">Under 1 hour</option>
+                    </select>
+                </div>
+                <div style="margin-bottom:1rem;">
+                    <label style="font-weight:500;">Difficulty:</label>
+                    <select>
+                        <option value="">Any</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <button type="submit" style="background:#2d7be5; color:#fff; border:none; border-radius:8px; padding:0.5rem 1.2rem; cursor:pointer;">Apply Filters</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('filterBtn').onclick = function() {
+            var panel = document.getElementById('filterPanel');
+            panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+        };
+    </script>
+    <main>
+        <section>
+            <h2 style="text-align:center;">Tutorials</h2>
+            <p style="text-align:center;">Welcome to the SpeakSmart tutorials section. Find lessons, practices, and articles to improve your speaking skills.</p>
+        </section>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; justify-items:center; margin-top:2rem;">
+            <div style="background:#ffb6b6; border:5px solid #2d7be5; border-radius:16px; padding:1.5rem; min-width:220px; min-height:160px; display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="font-size:1.15rem; font-weight:500; margin-bottom:0.5rem;">How to speak with confidence</div>
+                </div>
+                <div style="margin-top:1.5rem; font-size:1rem;">Lesson <span>📚</span></div>
+            </div>
+            <div style="background:#b6d6ff; border:5px solid #2d7be5; border-radius:16px; padding:1.5rem; min-width:220px; min-height:160px; display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="font-size:1.15rem; font-weight:500; margin-bottom:0.5rem;">Present a sales pitch to your boss</div>
+                </div>
+                <div style="margin-top:1.5rem; font-size:1rem;">Practice <span>🍉</span></div>
+            </div>
+            <div style="background:#ffb6f9; border:5px solid #2d7be5; border-radius:16px; padding:1.5rem; min-width:220px; min-height:160px; display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="font-size:1.15rem; font-weight:500; margin-bottom:0.5rem;">Why do I stutter when I talk?</div>
+                </div>
+                <div style="margin-top:1.5rem; font-size:1rem;">Article <span>📰</span></div>
+            </div>
+            <div style="background:#ffb6b6; border:5px solid #2d7be5; border-radius:16px; padding:1.5rem; min-width:220px; min-height:160px; display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="font-size:1.15rem; font-weight:500; margin-bottom:0.5rem;">How to speak with confidence</div>
+                </div>
+                <div style="margin-top:1.5rem; font-size:1rem;">Lesson <span>📚</span></div>
+            </div>
+            <div style="background:#b6d6ff; border:5px solid #2d7be5; border-radius:16px; padding:1.5rem; min-width:220px; min-height:160px; display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="font-size:1.15rem; font-weight:500; margin-bottom:0.5rem;">Present a sales pitch to your boss</div>
+                </div>
+                <div style="margin-top:1.5rem; font-size:1rem;">Practice <span>🍉</span></div>
+            </div>
+            <div style="background:#ffb6f9; border:5px solid #2d7be5; border-radius:16px; padding:1.5rem; min-width:220px; min-height:160px; display:flex; flex-direction:column; justify-content:space-between;">
+                <div>
+                    <div style="font-size:1.15rem; font-weight:500; margin-bottom:0.5rem;">Why do I stutter when I talk?</div>
+                </div>
+                <div style="margin-top:1.5rem; font-size:1rem;">Article <span>📰</span></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        &copy; 2025 SpeakSmart.
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SpeakSmart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="script" href="script.js" defer>
+</head>
+<body>
+    <header>
+        <div>
+            <h1 style="margin: 0">SpeakSmart</h1>
+        </div>
+        <nav>
+            <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="login.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Login</a>
+            </div>
+            <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="practice.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Practice</a>
+            <div class="dropdown-content" style="display:none; position:absolute; background:#0078d4; min-width:160px; z-index:1;">
+                <a href="practice_speech.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Speech Practice</a>
+                <a href="practice_pitch.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Pitch Practice</a>
+            </div>
+            </div>
+            <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="tutorials.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Tutorials</a>
+            <div class="dropdown-content" style="display:none; position:absolute; background:#0078d4; min-width:160px; z-index:1;">
+                <a href="tutorials_beginner.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Beginner</a>
+                <a href="tutorials_advanced.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Advanced</a>
+            </div>
+            </div>
+            <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="settings.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Settings</a>
+            <div class="dropdown-content" style="display:none; position:absolute; background:#0078d4; min-width:160px; z-index:1;">
+                <a href="settings_profile.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Profile</a>
+                <a href="settings_preferences.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Preferences</a>
+            </div>
+            </div>
+        </nav>
+        <script>
+            // Simple dropdown hover logic
+            document.querySelectorAll('.dropdown').forEach(function(drop) {
+            drop.addEventListener('mouseenter', function() {
+                var content = drop.querySelector('.dropdown-content');
+                if(content) content.style.display = 'block';
+            });
+            drop.addEventListener('mouseleave', function() {
+                var content = drop.querySelector('.dropdown-content');
+                if(content) content.style.display = 'none';
+            });
+            });
+        </script>
+    </header>
+    <!-- Carousel Section -->
+    <section class="carousel-container" style="width:100%; max-width:900px; margin:2rem auto;">
+        <div class="carousel" style="position:relative; overflow:hidden; border-radius:8px;">
+            <div class="carousel-slides" style="display:flex; transition:transform 0.5s ease;">
+                <div class="carousel-slide" style="min-width:100%; box-sizing:border-box; background:#e6f0fa; padding:2rem; text-align:center;">
+                    <h2>Welcome to SpeakSmart</h2>
+                    <p>AI-powered coaching for confident presentations.</p>
+                </div>
+                <div class="carousel-slide" style="min-width:100%; box-sizing:border-box; background:#f0e6fa; padding:2rem; text-align:center;">
+                    <h2>Instant Feedback</h2>
+                    <p>Get real-time insights as you practice.</p>
+                </div>
+                <div class="carousel-slide" style="min-width:100%; box-sizing:border-box; background:#e6fae6; padding:2rem; text-align:center;">
+                    <h2>Personalized Tips</h2>
+                    <p>Improve your delivery with tailored advice.</p>
+                </div>
+            </div>
+            <button class="carousel-prev" style="position:absolute; top:50%; left:10px; transform:translateY(-50%); background:#0078d4; color:#fff; border:none; border-radius:50%; width:32px; height:32px; cursor:pointer;">&#10094;</button>
+            <button class="carousel-next" style="position:absolute; top:50%; right:10px; transform:translateY(-50%); background:#0078d4; color:#fff; border:none; border-radius:50%; width:32px; height:32px; cursor:pointer;">&#10095;</button>
+        </div>
+        <div class="carousel-dots" style="text-align:center; margin-top:1rem;">
+            <span class="dot" style="height:12px; width:12px; margin:0 4px; background:#0078d4; border-radius:50%; display:inline-block; cursor:pointer; opacity:0.5;"></span>
+            <span class="dot" style="height:12px; width:12px; margin:0 4px; background:#0078d4; border-radius:50%; display:inline-block; cursor:pointer; opacity:0.5;"></span>
+            <span class="dot" style="height:12px; width:12px; margin:0 4px; background:#0078d4; border-radius:50%; display:inline-block; cursor:pointer; opacity:0.5;"></span>
+        </div>
+        <script>
+            // Simple Carousel Logic
+            const slides = document.querySelector('.carousel-slides');
+            const dots = document.querySelectorAll('.dot');
+            let currentIndex = 0;
+            function showSlide(index) {
+                slides.style.transform = 'translateX(' + (-index * 100) + '%)';
+                dots.forEach((dot, i) => {
+                    dot.style.opacity = i === index ? '1' : '0.5';
+                });
+            }
+            document.querySelector('.carousel-prev').onclick = function() {
+                currentIndex = (currentIndex === 0) ? 2 : currentIndex - 1;
+                showSlide(currentIndex);
+            };
+            document.querySelector('.carousel-next').onclick = function() {
+                currentIndex = (currentIndex === 2) ? 0 : currentIndex + 1;
+                showSlide(currentIndex);
+            };
+            dots.forEach((dot, i) => {
+                dot.onclick = function() {
+                    currentIndex = i;
+                    showSlide(currentIndex);
+                };
+            });
+            showSlide(currentIndex);
+        </script>
+    </section>
+    <main>
+        <section>
+            <h2>About the Project</h2>
+            <p>
+                This app uses artificial intelligence to help users improve their presentation skills. Get instant feedback on delivery, clarity, pacing, and more.
+            </p>
+        </section>
+        <section>
+            <h2>Key Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>Real-Time Feedback</h3>
+                    <p>Receive actionable insights as you present.</p>
+                </div>
+                <div class="feature">
+                    <h3>Speech Analysis</h3>
+                    <p>Analyze tone, pace, and clarity for effective communication.</p>
+                </div>
+                <div class="feature">
+                    <h3>Personalized Coaching</h3>
+                    <p>Get tailored tips to improve your presentation skills.</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Get Started</h2>
+            <p>
+                Sign up to try the AI Presentation Coach and take your public speaking to the next level.
+            </p>
+            <button style="padding:0.75rem 1.5rem; font-size:1rem; border:none; border-radius:4px; background:#0078d4; color:#fff; cursor:pointer;">
+                Sign Up
+            </button>
+        </section>
+    </main>
+    <footer>
+        &copy; 2025 AI Presentation Coach Project
+    </footer>
+</body>
+</html>

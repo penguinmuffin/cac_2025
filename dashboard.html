@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SpeakSmart Tutorials</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="script" href="script.js" defer>
+</head>
+<body>
+    <header>
+        <div>
+            <h1 style="margin: 0">SpeakSmart</h1>
+        </div>
+        <nav>
+            <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="login.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Login</a>
+            </div>
+            <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="practice.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Practice</a>
+            <div class="dropdown-content" style="display:none; position:absolute; background:#0078d4; min-width:160px; z-index:1;">
+                <a href="practice_speech.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Speech Practice</a>
+                <a href="practice_pitch.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Pitch Practice</a>
+            </div>
+            </div>
+            <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="tutorials.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Tutorials</a>
+            <div class="dropdown-content" style="display:none; position:absolute; background:#0078d4; min-width:160px; z-index:1;">
+                <a href="tutorials_beginner.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Beginner</a>
+                <a href="tutorials_advanced.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Advanced</a>
+            </div>
+            </div>
+            <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="settings.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Settings</a>
+            <div class="dropdown-content" style="display:none; position:absolute; background:#0078d4; min-width:160px; z-index:1;">
+                <a href="settings_profile.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Profile</a>
+                <a href="settings_preferences.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Preferences</a>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h2>Welcome to SpeakSmart Tutorials</h2>
+        <section class="dashboard-welcome">
+            <h3>Welcome back!</h3>
+            <p>We're glad to see you again. Continue your learning journey below.</p>
+        </section>
+        <section class="dashboard-blocks" style="display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+            <!-- Past Practices Block -->
+            <div class="dashboard-block" style="background: #f3f3f3; border-radius: 8px; padding: 1.5rem; flex: 1; min-width: 260px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <h3>Past Practices</h3>
+                <ul>
+                    <li><strong>Speech Practice:</strong> Completed 2 days ago</li>
+                    <li><strong>Pitch Practice:</strong> Completed 1 week ago</li>
+                    <li><strong>Beginner Tutorial:</strong> Completed 3 weeks ago</li>
+                </ul>
+                <a href="practice.html" style="color: #0078d4; text-decoration: underline;">View All Practices</a>
+            </div>
+            <!-- Tutorials Pathway Block -->
+            <div class="dashboard-block" style="background: #e6f0fa; border-radius: 8px; padding: 1.5rem; flex: 1; min-width: 260px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <h3>Tutorials Pathway</h3>
+                <ol>
+                    <li><a href="tutorials_beginner.html" style="color: #0078d4;">Beginner Level</a></li>
+                    <li><a href="tutorials_advanced.html" style="color: #0078d4;">Advanced Level</a></li>
+                    <li><a href="tutorials.html" style="color: #0078d4;">All Tutorials</a></li>
+                </ol>
+                <a href="tutorials.html" style="color: #0078d4; text-decoration: underline;">Explore Tutorials</a>
+            </div>
+            <!-- Recommended Articles Block -->
+            <div class="dashboard-block" style="background: #fffbe6; border-radius: 8px; padding: 1.5rem; flex: 1; min-width: 260px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <h3>Recommended Articles</h3>
+                <ul>
+                    <li><a href="https://www.toastmasters.org/resources/public-speaking-tips" target="_blank" style="color: #0078d4;">Public Speaking Tips</a></li>
+                    <li><a href="https://www.skillsyouneed.com/presentation-skills.html" target="_blank" style="color: #0078d4;">Presentation Skills</a></li>
+                    <li><a href="https://www.mindtools.com/communication-skills" target="_blank" style="color: #0078d4;">Effective Communication</a></li>
+                </ul>
+                <a href="resources.html" style="color: #0078d4; text-decoration: underline;">See More Articles</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

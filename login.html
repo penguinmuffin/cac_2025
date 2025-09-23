@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="script" href="script.js" defer>
+</head>
+<body>
+    <header>
+        <div>
+            <h1 style="margin: 0">SpeakSmart</h1>
+            <style>
+                html, body {
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                }
+                body {
+                    width: 100vw;
+                    height: 100vh;
+                }
+                main > form {
+                    min-width: 240px !important;
+                    max-width: 320px;
+                    padding: 1.5rem !important;
+                }
+            </style>
+        </div>
+        <nav>
+            <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="login.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Login</a>
+            </div>
+            <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="practice.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Practice</a>
+            <div class="dropdown-content" style="display:none; position:absolute; background:#0078d4; min-width:160px; z-index:1;">
+                <a href="practice_speech.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Speech Practice</a>
+                <a href="practice_pitch.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Pitch Practice</a>
+            </div>
+            </div>
+            <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="tutorials.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Tutorials</a>
+            <div class="dropdown-content" style="display:none; position:absolute; background:#0078d4; min-width:160px; z-index:1;">
+                <a href="tutorials_beginner.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Beginner</a>
+                <a href="tutorials_advanced.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Advanced</a>
+            </div>
+            </div>
+            <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="settings.html" style="color:#fff; text-decoration:none; margin-left:2rem;">Settings</a>
+            <div class="dropdown-content" style="display:none; position:absolute; background:#0078d4; min-width:160px; z-index:1;">
+                <a href="settings_profile.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Profile</a>
+                <a href="settings_preferences.html" style="color:#fff; text-decoration:none; display:block; padding:0.5rem;">Preferences</a>
+            </div>
+            </div>
+        </nav>
+        <script>
+            // Simple dropdown hover logic
+            document.querySelectorAll('.dropdown').forEach(function(drop) {
+            drop.addEventListener('mouseenter', function() {
+                var content = drop.querySelector('.dropdown-content');
+                if(content) content.style.display = 'block';
+            });
+            drop.addEventListener('mouseleave', function() {
+                var content = drop.querySelector('.dropdown-content');
+                if(content) content.style.display = 'none';
+            });
+            });
+        </script>
+    </header>
+    <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
+        <form action="dashboard.html" method="post" style="background: #f4f4f4; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); min-width: 180px; width: 60%; max-width: 250px; transform: scale(1.15);">
+            <h2 style="text-align:center; margin-bottom:1.5rem;">Login</h2>
+            <div style="margin-bottom: 1rem;">
+                <input type="text" id="username" name="username" required placeholder="Username" style="width:90%; padding:0.7rem; border:1px solid #ccc; border-radius:4px;">
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+                <input type="password" id="password" name="password" required placeholder="Password" style="width:90%; padding:0.7rem; border:1px solid #ccc; border-radius:4px;">
+            </div>
+            <button type="button" onclick="window.location.href='dashboard.html'" class="login-btn" style="width:100%; padding:0.75rem; background:#0078d4; color:#fff; border:none; border-radius:4px; font-size:1rem; transition:box-shadow 0.2s;">Login</button>
+            <div style="margin-top:1.5rem; text-align:center;">
+                <a href="signup.html" style="margin-right:1.5rem; color:#0078d4; text-decoration:none;">Sign up</a>
+                <a href="forgot_password.html" style="color:#0078d4; text-decoration:none;">Forgot password?</a>
+            </div>
+            <style>
+            .login-btn {
+                transition: box-shadow 0.3s;
+            }
+            .login-btn:hover {
+                box-shadow: 0 4px 16px rgba(0, 120, 212, 0.3);
+            }
+            </style>
+        </form>
+    </div>
